@@ -1,11 +1,10 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-import useUrlState from './hooks/useUrlState'
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+// import useUrlState from './hooks/useUrlState';
+import SelectModal from './components/SelectModal'; // 添加: 导入 SelectModal 组件
 
 function App() {
-  const [count, setCount] = useUrlState<number>('count', 0)
-
   return (
     <div className="App">
       <header className="App-header">
@@ -21,14 +20,10 @@ function App() {
         >
           Learn React
         </a>
+        <SelectModal buttonLabel="Open Modal" />
       </header>
-      <div>
-        <h1>Count: {count}</h1>
-        <button onClick={() => setCount(count + 1)}>Increment</button>
-        <button onClick={() => setCount(count - 1)}>Decrement</button>
-      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
